@@ -1,0 +1,17 @@
+# Dependency directories
+node_modules/
+
+# Compiled files
+build/
+
+# Output of `npm pack`
+*.tgz
+
+# Output of `wp-scripts plugin-zip`
+*.zip
+
+# dotenv environment variables file
+.env
+
+# Jetbrains editor config
+.idea

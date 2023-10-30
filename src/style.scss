@@ -1,0 +1,8 @@
+html.dark-mode {
+	// Apply invert filter to images svg and videos
+	&:not(img),
+	&:not(video),
+	&:not(svg) {
+		filter: invert(100%) hue-rotate(180deg);
+	}
+}
