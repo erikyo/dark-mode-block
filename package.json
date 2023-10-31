@@ -1,57 +1,61 @@
 {
-  "name": "dark-mode-block",
-  "version": "1.0.0",
-  "contributors": [
-    "Erik Golinelli <erik@codekraft.it> (https://codekraft.it/)"
-  ],
-  "license": "GPL-2.0-or-later",
-  "files": [
-    "build/*",
-    "dark-mode-block.php",
-    "LICENSE.md",
-    "readme.txt"
-  ],
-  "scripts": {
-    "packages-update": "wp-scripts packages-update",
-    "build": "wp-scripts build",
-    "start": "wp-scripts start",
-    "format": "wp-scripts format ./src",
-    "lint:css": "wp-scripts lint-style",
-    "lint:js": "eslint --ext .js,.jsx,.ts,.tsx .",
-    "wp-env:start": "wp-env start",
-    "wp-env:stop": "wp-env stop",
-    "wp-env:destroy": "wp-env destroy",
-    "plugin-zip": "wp-scripts plugin-zip"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.21.0",
-    "@babel/preset-typescript": "^7.21.0",
-    "@jest/globals": "^29.4.3",
-    "@types/babel__core": "^7.20.0",
-    "@types/node": "^18.14.1",
-    "@types/wordpress__block-editor": "^11.0.1",
-    "@types/wordpress__blocks": "^12.0.3",
-    "@types/wordpress__components": "^23.0.1",
-    "@types/wordpress__compose": "^6.0.1",
-    "@wordpress/block-editor": "^11.4.0",
-    "@wordpress/blocks": "^12.4.0",
-    "@wordpress/env": "^5.12.0",
-    "@wordpress/prettier-config": "^2.10.0",
-    "@wordpress/scripts": "^25.4.0",
-    "@wordpress/stylelint-config": "^21.10.0"
-  },
-  "engines": {
-    "node": ">=14.0.0",
-    "npm": ">=6.9.0"
-  },
-  "eslintConfig": {
-    "extends": [ "plugin:@wordpress/eslint-plugin/esnext" ],
-    "globals": {
-      "document": true
-    }
-  },
-  "browserslist": [
-    "extends @wordpress/browserslist-config"
-  ],
-  "prettier": "@wordpress/prettier-config"
+	"name": "dark-mode-block",
+	"version": "1.0.0",
+	"contributors": [
+		"Erik Golinelli <erik@codekraft.it> (https://codekraft.it/)"
+	],
+	"license": "GPL-2.0-or-later",
+	"files": [
+		"build/*",
+		"dark-mode-block.php",
+		"LICENSE.md",
+		"readme.txt"
+	],
+	"scripts": {
+		"packages-update": "wp-scripts packages-update",
+		"build": "wp-scripts build",
+		"start": "wp-scripts start",
+		"format": "wp-scripts format ./src",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "eslint --ext .js,.jsx,.ts,.tsx .",
+		"wp-env:start": "wp-env start",
+		"wp-env:stop": "wp-env stop",
+		"wp-env:destroy": "wp-env destroy",
+		"plugin-zip": "wp-scripts plugin-zip"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.21.0",
+		"@babel/preset-typescript": "^7.21.0",
+		"@jest/globals": "^29.4.3",
+		"@types/babel__core": "^7.20.0",
+		"@types/node": "^18.14.1",
+		"@types/wordpress__block-editor": "^11.0.1",
+		"@types/wordpress__blocks": "^12.0.3",
+		"@types/wordpress__components": "^23.0.1",
+		"@types/wordpress__compose": "^6.0.1",
+		"@wordpress/block-editor": "^11.4.0",
+		"@wordpress/blocks": "^12.4.0",
+		"@wordpress/env": "^5.12.0",
+		"@wordpress/prettier-config": "^2.10.0",
+		"@wordpress/scripts": "^25.4.0",
+		"@wordpress/stylelint-config": "^21.10.0"
+	},
+	"engines": {
+		"node": ">=14.0.0",
+		"npm": ">=6.9.0"
+	},
+	"eslintConfig": {
+		"extends": [
+			"plugin:@wordpress/eslint-plugin/esnext"
+		],
+		"globals": {
+			"window": true,
+			"document": true,
+			"localStorage": true
+		}
+	},
+	"browserslist": [
+		"extends @wordpress/browserslist-config"
+	],
+	"prettier": "@wordpress/prettier-config"
 }

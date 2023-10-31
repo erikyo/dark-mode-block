@@ -6,15 +6,19 @@ import './style.scss';
 /* Block settings */
 import blockConfig from '../block.json';
 
+const props = {
+	className: 'dark-mode-switch',
+};
+
 // Register the custom block
 registerBlockType( blockConfig.name, {
 	...blockConfig,
 
 	edit() {
-		return ( <div { ...useBlockProps() }><input type={'checkbox'} className={'dark-mode-checkbox'} onClick={() => document.documentElement.classList.toggle( 'dark-mode' )} /></div> );
+		return ( <div { ...useBlockProps( props ) } /> );
 	},
 
 	save() {
-		return <div { ...useBlockProps.save() }><input type={'checkbox'} className={'dark-mode-checkbox'} onclick="document.documentElement.classList.toggle('dark-mode');"/></div>;
+		return <div { ...useBlockProps.save( props ) } />;
 	},
 } );
