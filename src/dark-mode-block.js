@@ -18,9 +18,7 @@ const SWITCHES_CLASS = `.${ BODY_CLASS }-switch`;
  * @return {*} The current value of the dark mode flag
  */
 const onSwitchClick = ( active ) => {
-	setDarkMode( active ); // update color theme
-	// update dark mode stored value
-	return active;
+	return setDarkMode( active ); // update color theme
 };
 
 /**
