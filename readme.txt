@@ -1,11 +1,12 @@
 === Dark Mode Block ===
-Contributors: Erik
-Tags: dark mode, block
+Contributors:      codekraft
+Tags:              dark mode, theme, css, block
 Requires at least: 5.7
-Tested up to: 6.3
-Requires PHP: 5.6
-License: GPLv3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Tested up to:      6.4
+Stable tag:        0.1.0
+Requires PHP:      7.1
+License:           GPLv3 or later
+License URI:       http://www.gnu.org/licenses/gpl-3.0.html
 
 == Description ==
 
@@ -33,11 +34,8 @@ Allow your users to activate dark mode by checking the checkbox, ensuring a comf
 
 == Frequently Asked Questions ==
 
-**Q: Can I customize the appearance of the dark mode checkbox?**
-A: Yes, you can customize the appearance of the dark mode checkbox to match your website's design using the block settings.
-
 **Q: Does this plugin work with all WordPress themes?**
-A: Dark Mode Block is designed to be compatible with most WordPress themes. However, some themes may require additional styling adjustments for optimal dark mode functionality.
+A: Dark Mode Block is designed to be compatible with most of FSE WordPress themes. However, some themes may require additional styling adjustments for optimal dark mode functionality.
 
 == Changelog ==
 
