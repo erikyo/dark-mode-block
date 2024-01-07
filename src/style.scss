@@ -1,22 +1,25 @@
 // Apply invert filter and revert it back to images svg and videos
 .dark-mode {
 
-	&, img, video, svg {
+	&,
+	img,
+	video,
+	svg {
 		filter: invert(100%) hue-rotate(180deg);
 	}
 }
 
 .dark-mode-switch {
-	width: 1.6rem;
-	height: 1.6rem;
+	width: 1.5rem;
+	height: 1.5rem;
 	border-radius: 50%;
 	transition: 0.5s;
 	cursor: pointer;
 	background-color: transparent;
-	box-shadow: inset -0.3rem -0.3rem 0 0.1rem #223;
+	box-shadow: inset -0.3rem -0.3rem 0 0.1rem #334;
 
 	.dark-mode & {
-		background-color: #ea0;
-		box-shadow: inset -0.2rem -0.2rem 0 #f80;
+		background-color: #cf5e12;
+		box-shadow: inset -0.2rem -0.2rem 0 #dd7600;
 	}
 }
