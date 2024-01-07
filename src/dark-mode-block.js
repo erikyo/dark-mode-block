@@ -3,71 +3,79 @@
  *
  * @type {string}
  */
-const BODY_CLASS = 'dark-mode';
+const DM_CLASS = 'dark-mode';
 /**
  * The class name for the dark mode switch elements
  *
  * @type {string}
  */
-const SWITCHES_CLASS = `.${ BODY_CLASS }-switch`;
-
-/**
- *  Update the dark mode based on the value in local storage.
- *
- * @param {boolean} active - Flag indicating whether the dark mode should be enabled or not
- * @return {*} The current value of the dark mode flag
- */
-const onSwitchClick = ( active ) => {
-	return setDarkMode( active ); // update color theme
-};
+const SWITCHES_CLASS = `.${ DM_CLASS }-switch`;
 
 /**
  * Initializes the dark mode feature.
  *
- * @param {Array}   switches - An array of checkboxes representing the switches.
- * @param {boolean} isDark   - A boolean indicating whether to enable dark mode.
+ * @param {NodeList} switches - An array of checkboxes representing the switches.
+ * @param {string}   mode     - the value of the dark mode flag
  */
-function initDarkMode( switches, isDark ) {
+function initDarkMode( switches, mode ) {
 	switches
 		.forEach( ( switchEl ) => {
 			// update checkbox
-			switchEl.onclick = () => isDark = onSwitchClick( ! isDark );
+			switchEl.onclick = () => mode = setMode( mode );
 		} );
 }
 
 /**
  * Update the dark mode based on the value in local storage.
  *
- * @param {boolean} enable - Flag indicating whether the dark mode should be enabled or not.
- * @return {boolean} The current value of the dark mode flag.
+ * @param {string=} mode - Flag indicating whether the dark mode should be enabled or not.
+ * @return {string} The current value of the dark mode flag.
  */
-function setDarkMode( enable ) {
-	// update body class and store the value in the local storage
-	if ( enable ) { // dark theme has been selected
-		document.documentElement.classList.add( BODY_CLASS );
-		localStorage.setItem( 'theme', 'dark' ); // save theme selection
-	} else {
-		document.documentElement.classList.remove( BODY_CLASS );
-		localStorage.removeItem( 'theme' ); // reset theme selection
-	}
+function setMode( mode ) {
+	const rootClassList = document.documentElement.classList;
+	const isDark = mode === 'dark';
 
-	return enable;
+	// Toggle dark mode class
+	rootClassList[ isDark ? 'add' : 'remove' ]( DM_CLASS );
+
+	// Update local storage
+	localStorage[ mode ? 'setItem' : 'removeItem' ]( DM_CLASS, mode );
+
+	return isDark ? 'light' : 'dark';
 }
 
 /**
- * Enables dark mode by initializing the dark mode switch elements
- * and setting the initial theme based on the value in local storage.
+ * Returns whenever the dark mode is enabled or not based on the user's system settings.
+ *
+ * @return {string} true if the dark mode is enabled, false otherwise
+ */
+function detectDarkMode() {
+	return window.matchMedia( '(prefers-color-scheme: dark)' )?.matches ? 'dark' : 'light';
+}
+
+/**
+ * Checks if the dark mode is stored in the local storage.
+ *
+ * @return {string|undefined} Returns the value of the color-scheme mode stored in the local storage
+ */
+function hasStoredDarkMode() {
+	return localStorage.getItem( DM_CLASS ) ?? undefined;
+}
+
+/**
+ * Initializes the dark mode feature for the UI based on
+ * stored settings or system preference.
  */
 function DarkModeModule() {
-	// get the initial theme if dark or not
-	const isDark = localStorage.getItem( 'theme' ) === 'dark' || false;
+	let mode = hasStoredDarkMode();
 
-	if ( isDark ) {
-		setDarkMode( true );
+	// if mode is undefined, detect the mode
+	if ( ! mode ) {
+		mode = detectDarkMode();
 	}
 
 	window.onload = () => {
-		initDarkMode( document.querySelectorAll( SWITCHES_CLASS ), isDark );
+		initDarkMode( document.querySelectorAll( SWITCHES_CLASS ), setMode( mode ) );
 	};
 }
 
