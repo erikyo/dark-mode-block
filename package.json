@@ -17,8 +17,8 @@
 		"build": "wp-scripts build",
 		"start": "wp-scripts start",
 		"format": "wp-scripts format ./src",
-		"lint:css": "wp-scripts lint-style",
-		"lint:js": "eslint --ext .js,.jsx,.ts,.tsx .",
+		"lint:css": "wp-scripts lint-style ./src/style.scss --fix",
+		"lint:js": "eslint --ext .js,.jsx,.ts,.tsx ./src --fix",
 		"wp-env:start": "wp-env start",
 		"wp-env:stop": "wp-env stop",
 		"wp-env:destroy": "wp-env destroy",
@@ -27,14 +27,9 @@
 	"devDependencies": {
 		"@babel/core": "^7.21.0",
 		"@babel/preset-typescript": "^7.21.0",
-		"@jest/globals": "^29.4.3",
 		"@types/babel__core": "^7.20.0",
 		"@types/node": "^18.14.1",
-		"@types/wordpress__block-editor": "^11.0.1",
 		"@types/wordpress__blocks": "^12.0.3",
-		"@types/wordpress__components": "^23.0.1",
-		"@types/wordpress__compose": "^6.0.1",
-		"@wordpress/block-editor": "^11.4.0",
 		"@wordpress/blocks": "^12.4.0",
 		"@wordpress/env": "^5.12.0",
 		"@wordpress/prettier-config": "^2.10.0",
@@ -58,5 +53,8 @@
 	"browserslist": [
 		"extends @wordpress/browserslist-config"
 	],
-	"prettier": "@wordpress/prettier-config"
+	"prettier": "@wordpress/prettier-config",
+	"dependencies": {
+		"react": "^18.2.0"
+	}
 }
