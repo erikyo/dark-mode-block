@@ -5,7 +5,7 @@
  * Description:       Enable dark mode for your website without any effort
  * Version:           0.1.0
  * Requires at least: 5.7
- * Tested up to:      6.3
+ * Tested up to:      6.4
  * Requires PHP:      5.6
  * Author:            codekraft
  * Author URI:        https://codekraft.it

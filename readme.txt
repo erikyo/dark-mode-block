@@ -43,11 +43,20 @@ Here's how to do it:
 1. Add the following code to your functions.php file.
 2. Edit the $custom_css in order to fit your preferences
 
-```
+First dequeue the current style in this way:
+
+`
+
 add_action( 'wp_enqueue_scripts', function () {
 	/** dequeue the default dark mode */
 	wp_dequeue_style( 'codekraft-dark-mode-style' );
 }, 9 );
+
+`
+
+Then add yours!
+
+`
 
 add_action( 'wp_head', function () {
 	/** @var {string} $custom_css - your custom css for the dark mode */
@@ -55,7 +64,6 @@ add_action( 'wp_head', function () {
 		--wp--preset--color--background: #232323;
 		--wp--preset--color--foreground: #f3f3f3;
 	}
-
 	.dark-mode-switch::before {
 		width: 1.6rem;
 		cursor: pointer;
@@ -64,14 +72,13 @@ add_action( 'wp_head', function () {
 		line-height: 1.6rem;
 		content: '🌞'
 	}
-
 	.dark-mode .dark-mode-switch::before {
 		content: '🌚'
 	}";
-
 	echo "<style id='dark-mode-custom'>$custom_css</style>";
 }, 20 );
-```
+
+`
 
 Please support the plugin posting your custom style and a screenshot in the WordPress support forum section!
 
