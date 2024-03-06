@@ -74,9 +74,7 @@ function DarkModeModule() {
 		mode = detectDarkMode();
 	}
 
-	window.onload = () => {
-		initDarkMode( document.querySelectorAll( SWITCHES_CLASS ), setMode( mode ) );
-	};
+	initDarkMode( document.querySelectorAll( SWITCHES_CLASS ), setMode( mode ) );
 }
 
 DarkModeModule();

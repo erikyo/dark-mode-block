@@ -3,7 +3,7 @@
 /**
  * Plugin Name:       Dark Mode Block
  * Description:       Enable dark mode for your website without any effort
- * Version:           0.1.0
+ * Version:           0.1.1
  * Requires at least: 5.7
  * Tested up to:      6.4
  * Requires PHP:      5.6
@@ -14,8 +14,16 @@
  * Text Domain:       dark-mode-block
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
-\add_action( 'init', function() {
-    \register_block_type( __DIR__ );
+/** Register the block */
+\add_action( 'init', function () {
+	\register_block_type( __DIR__ );
 } );
+
+/** Enqueue the block assets */
+\add_action( 'wp_enqueue_scripts', function () {
+	\wp_enqueue_script( 'dark-mode-block', plugin_dir_url( __FILE__ ) . '/build/dark-mode.js', array(), '0.1.0', array( 'strategy' => false, 'in_footer' => false, ) );
+}, 0 );

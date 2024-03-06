@@ -19,7 +19,6 @@
 			"padding": true
 		}
 	},
-	"viewScript": "file:./build/dark-mode.js",
 	"editorScript": [
 		"file:./build/dark-mode-editor.js"
 	],
