@@ -25,5 +25,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Enqueue the block assets */
 \add_action( 'wp_enqueue_scripts', function () {
-	\wp_enqueue_script( 'dark-mode-block', plugin_dir_url( __FILE__ ) . '/build/dark-mode.js', array(), '0.1.0', array( 'strategy' => null, 'in_footer' => false, ) );
+	\wp_enqueue_script( 'dark-mode-block', plugin_dir_url( __FILE__ ) . '/build/dark-mode.js', array(), '0.1.1', array( 'strategy' => null, 'in_footer' => false, ) );
 }, 0 );
