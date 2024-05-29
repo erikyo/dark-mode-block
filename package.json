@@ -32,6 +32,7 @@
 		"@wordpress/block-editor": "^12.26.0",
 		"@wordpress/blocks": "^12.35.0",
 		"@wordpress/env": "^9.10.0",
+		"@wordpress/icons": "^9.49.0",
 		"@wordpress/prettier-config": "^3.15.0",
 		"@wordpress/scripts": "^27.9.0",
 		"@wordpress/stylelint-config": "^21.41.0"
