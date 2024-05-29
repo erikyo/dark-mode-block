@@ -1,0 +1,44 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "codekraft/dark-mode",
+	"title": "Dark Mode Switch",
+	"description": "Enables the dark mode for your website",
+	"textdomain": "dark-mode-block",
+	"keywords": [
+		"dark mode"
+	],
+	"icon": "shadow",
+	"category": "widgets",
+	"supports": {
+		"align": true,
+		"className": true,
+		"color": {
+			"background": true
+		},
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"backgroundVar": {
+			"type": "string"
+		},
+		"textVar": {
+			"type": "string"
+		},
+		"lightColor": {
+			"type": "string"
+		},
+		"darkColor": {
+			"type": "string"
+		}
+	},
+	"editorScript": [
+		"file:./dark-mode-editor.js"
+	],
+	"style": [
+		"file:./style-dark-mode-editor.css"
+	]
+}
